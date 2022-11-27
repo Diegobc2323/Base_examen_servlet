@@ -10,15 +10,8 @@
 <body class="container">
 
 	
-	<a href="/insertarAlumnos.jsp">Quiero introducir un alumno</a>
-	<br>
-	<a href="/asigTitulaciones">Asignar Titulaciones a un alumno</a>
-	<br>
-	<a href="/listAlumno">Quiero comprobar la informacion de un alumno</a>
-	<br>
-	<a href="/listTitulaciones">Ver el listado de Titulaciones</a> <!-- estamos insertando titulaciones para luego poder mostrarlo -->
-	<br>
-	<a href="/insertarTitulaciones.jsp">Crear nueva Titulacion</a>
+	<a href="/listChampions">Listado de Campeones</a>
+	
 	
 </body>
 </html>

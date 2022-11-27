@@ -6,25 +6,25 @@ import java.util.Optional;
 
 
 
-import model.Alumno;
-import repository.AlumnoRepository;
+import model.Champions;
+import repository.ChampionRepository;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-@WebServlet("/listAlumno")
-public class ListAlumnoServlet extends BaseServlet{
+@WebServlet("/listChampions")
+public class ListChampionServlet extends BaseServlet{
 
-	AlumnoRepository repository = new AlumnoRepository();
+	ChampionRepository repository = new ChampionRepository();
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		List<Alumno> alumnos = repository.listAll();
-		req.setAttribute("lista", alumnos);
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listAlumnos.jsp");
+		List<Champions> champions = repository.listAll();
+		req.setAttribute("lista", champions);
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listChampions.jsp");
 		dispatcher.forward(req, resp);
 	}
 

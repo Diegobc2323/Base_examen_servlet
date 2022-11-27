@@ -4,9 +4,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 
-import model.Alumno;
-import model.Titulacion;
-import model.Alumno_Titulacion;
+import model.Champions;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -19,30 +17,26 @@ public abstract class BaseServlet extends HttpServlet {
 		super();
 	}
 
-	protected Alumno getAlumnoFromRequest(HttpServletRequest req) {
-		Alumno alumno = new Alumno();
-		alumno.setNombre(req.getParameter("nombre"));
-		System.out.println(alumno.getNombre());
-		alumno.setEdad(Integer.parseInt(req.getParameter("edad")));
-		System.out.println(alumno.getEdad());
-		return alumno;
+	protected Champions getChampionFromRequest(HttpServletRequest req) {
+		Champions champion = new Champions();
+		champion.setId(Integer.parseInt(req.getParameter("id")));
+		champion.setChampion_name(req.getParameter("champion_name"));
+		champion.setTitle(req.getParameter("title"));
+		champion.setLore(req.getParameter("lore"));
+		champion.setTags(req.getParameter("tags"));
+		
+		
+		System.out.println(champion.getId());
+		System.out.println(champion.getChampion_name());
+		System.out.println(champion.getTitle());
+		System.out.println(champion.getLore());
+		System.out.println(champion.getTags());
+		
+		
+		return champion;
+		
 	}
 	
-	protected Alumno_Titulacion getAlumno_TitulacionFromRequest(HttpServletRequest req) {
-		Alumno_Titulacion alumno_tit = new Alumno_Titulacion();
-		alumno_tit.setId_titulacion(Integer.parseInt(req.getParameter("titulacion")));
-		System.out.println(alumno_tit.getId_titulacion());
-		alumno_tit.setId_alumno(Integer.parseInt(req.getParameter("alumno")));
-		System.out.println(alumno_tit.getId_alumno());
-		return alumno_tit;
-	}
-	
-	protected Titulacion getTitulacionFromRequest(HttpServletRequest req) {
-		Titulacion titulacion = new Titulacion();
-		titulacion.setTitulo(req.getParameter("titulo"));
-		System.out.println(titulacion.getTitulo());
-		return titulacion;
-	}
 	
 
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp, String jsp) throws IOException, ServletException {
