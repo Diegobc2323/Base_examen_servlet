@@ -7,11 +7,14 @@
 /home/alumno/eclipse-workspace/base_examen_servlet/src/main/java/repository/Champion_statsRepository.java
 /home/alumno/eclipse-workspace/base_examen_servlet/src/main/java/repository/Champion_abilitiesRepository.java
 /home/alumno/eclipse-workspace/base_examen_servlet/src/main/java/repository/Champion_tipsRepository.java
+/home/alumno/eclipse-workspace/base_examen_servlet/src/main/java/servlet/EliminarItem.java
 /home/alumno/eclipse-workspace/base_examen_servlet/src/main/java/repository/ItemsRepository.java
+/home/alumno/eclipse-workspace/base_examen_servlet/src/main/java/servlet/InsertItemsServlet.java
 /home/alumno/eclipse-workspace/base_examen_servlet/src/main/java/servlet/BaseServlet.java
 /home/alumno/eclipse-workspace/base_examen_servlet/src/main/java/model/Champion_stats.java
 /home/alumno/eclipse-workspace/base_examen_servlet/src/main/java/servlet/ListChampion_abilitiesServlet.java
 /home/alumno/eclipse-workspace/base_examen_servlet/src/main/java/connection/AbstractConnection.java
+/home/alumno/eclipse-workspace/base_examen_servlet/src/main/java/servlet/ListItemsServlet.java
 /home/alumno/eclipse-workspace/base_examen_servlet/src/main/java/model/Runes.java
 /home/alumno/eclipse-workspace/base_examen_servlet/src/main/java/connection/H2Connection.java
 /home/alumno/eclipse-workspace/base_examen_servlet/src/main/java/model/Champion_tips.java

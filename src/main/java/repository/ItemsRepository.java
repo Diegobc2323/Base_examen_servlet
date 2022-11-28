@@ -62,25 +62,44 @@ public class ItemsRepository {
 		}
 		return last_id;
 	}
-/*
-	public List<Champions> listAll() {
-		List<Champions> lista = new ArrayList<>();
+	
+	public void delete(int id) {
+		Connection conn = manager.open(jdbcUrl);
+		PreparedStatement preparedStatement = null;
+		
+		try {
+
+			preparedStatement = conn
+					.prepareStatement("DELETE FROM items WHERE id = ?");
+			preparedStatement.setInt(1, id);
+			preparedStatement.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			manager.close(preparedStatement);
+			manager.close(conn);
+		}
+	}
+
+	public List<Items> listAll() {
+		List<Items> lista = new ArrayList<>();
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = conn
-					.prepareStatement("SELECT * FROM champions ");
+					.prepareStatement("SELECT * FROM items ");
 
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				Champions champion = new Champions();
-				champion.setId(resultSet.getInt("id"));
-				champion.setChampion_name(resultSet.getString("champion_name"));
-				champion.setTitle(resultSet.getString("title"));
-				champion.setLore(resultSet.getString("lore"));
-				champion.setTags(resultSet.getString("tags"));
+				Items item = new Items();
+				item.setId(resultSet.getInt("id"));
+				item.setItem_name(resultSet.getString("item_name"));
+				item.setEffect(resultSet.getString("effect"));
 				
-				lista.add(champion);
+				
+				lista.add(item);
 			
 			}
 		} catch (SQLException e) {
@@ -92,22 +111,7 @@ public class ItemsRepository {
 		}
 		return lista;
 	}
-	public void delete(int id) {
-		Connection conn = manager.open(jdbcUrl);
-		PreparedStatement preparedStatement = null;
-		try {
-			preparedStatement = conn
-					.prepareStatement("DELETE FROM Alumno WHERE id = ?");
-			preparedStatement.setInt(1, id);
-			preparedStatement.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
-		} finally {
-			manager.close(preparedStatement);
-			manager.close(conn);
-		}
-	}
-*/
+	
+
 	
 }

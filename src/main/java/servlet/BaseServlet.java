@@ -5,6 +5,7 @@ import java.util.Optional;
 
 
 import model.Champions;
+import model.Items;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -34,6 +35,16 @@ public abstract class BaseServlet extends HttpServlet {
 		
 		
 		return champion;
+		
+	}
+	
+	protected Items getItemFromRequest(HttpServletRequest req) {
+		Items item = new Items();
+		item.setItem_name(req.getParameter("item_name"));
+		item.setEffect(req.getParameter("effect"));
+
+		
+		return item;
 		
 	}
 	
