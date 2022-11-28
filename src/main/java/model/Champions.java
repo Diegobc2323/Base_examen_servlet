@@ -2,7 +2,7 @@ package model;
 
 public class Champions {
 
-	private Integer id;
+	private int id;
 	private String champion_name;
 	private String title;
 	private String lore;

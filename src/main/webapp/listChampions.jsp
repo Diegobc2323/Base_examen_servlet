@@ -20,6 +20,16 @@
 		<td><c:out value="${champion.title}"/></td>
 		<td><c:out value="${champion.lore}"/></td>
 		<td><c:out value="${champion.tags}"/></td>
+		<td>
+		<form action="/listChampion_abilities" method="post">
+			<input type="hidden" name="id" value="${champion.id}"/>
+			<input type="hidden" name="champion_name" value="${champion.champion_name}"/>
+			<input type="hidden" name="title" value="${champion.title}"/>
+			<input type="hidden" name="lore" value="${champion.lore}"/>
+			<input type="hidden" name="tags" value="${champion.tags}"/>
+			<input type="submit" value="Habilidades">
+		</form>
+		</td>
 	</tr>
 </c:forEach>
 </table>
